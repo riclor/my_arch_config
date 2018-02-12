@@ -1,17 +1,20 @@
 #my config
-exec no-startup-ip nm-applet
-#for_window [class="Firefox"] move container to workspace 2
-#exec --no-startup-id firefox
+
+for_window [class="Atom"] move container to workspace 4
+
+exec --no-startup-id atom
 exec --no-startup-id i3-msg 'workspace 1; exec xfce4-terminal'
 exec --no-startup-id i3-msg 'workspace 2; exec firefox'
 exec --no-startup-id i3-msg 'workspace 3; exec pcmanfm'
+exec --no-startup-id nm-applet --sm-disable
+exec --no-startup-id volumeicon
 
-# Pulse Audio controls
-# Pulse Audio controls
+  # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
+  # Brightness control
 bindsym XF86KbdBrightnessUp exec --no-startup-id kbd_backlight.sh up
 bindsym XF86KbdBrightnessDown exec --no-startup-id kbd_backlight.sh down
 
